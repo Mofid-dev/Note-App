@@ -6,7 +6,7 @@ const createBtn = document.querySelector(".create-btn")
 const writingSection = document.querySelector(".writing-section")
 const readingSection = document.querySelector(".reading-section")
 // const readerCancelBtn = document.querySelector(".reader-cancel-btn")
-const notes = [];
+const notes = JSON.parse(localStorage.getItem("notes")) || [];;
 
 function formattingDate() {
 
@@ -61,6 +61,7 @@ function readingCard(oldIndex) {
 function deleteNote(index) {
     notes.splice(index, 1);
     displaynotes()
+    saveToLocalStorage()
 }
 
 createBtn.addEventListener("click", function () {
@@ -74,26 +75,32 @@ cancelBtn.addEventListener("click", function () {
 })
 
 saveBtn.addEventListener("click", function addNote() {
-    const title = document.querySelector(".title-input").value
-    const content = document.querySelector(".content-input").value
+    const titleInput = document.querySelector(".title-input")
+    const contentInput = document.querySelector(".content-input")
     notes.push({
-        title: title,
-        content: content,
+        title: titleInput.value,
+        content: contentInput.value,
         data: formattingDate()
     })
 
     displaynotes()
+    saveToLocalStorage()
 
     container.style.display = "flex"
     writingSection.style.display = "none"
 
-    title = ""
-    content = ""
+    titleInput.value = ""
+    contentInput.value = ""
+
 })
 
 function cancelReading() {
     container.style.display = "flex"
     readingSection.style.display = "none"
+}
+
+function saveToLocalStorage() {
+    localStorage.setItem("notes", JSON.stringify(notes))
 }
 
 displaynotes()

@@ -6,38 +6,7 @@ const createBtn = document.querySelector(".create-btn")
 const writingSection = document.querySelector(".writing-section")
 const readingSection = document.querySelector(".reading-section")
 // const readerCancelBtn = document.querySelector(".reader-cancel-btn")
-const notes = [
-    {
-        title: "note title 1",
-        content: "content 1 is here",
-        data: "20-09-2025"
-    },
-    {
-        title: "note title 2",
-        content: "content 2 is here",
-        data: "20-09-2025"
-    },
-    {
-        title: "note title 3",
-        content: "content 3 is here",
-        data: "20-09-2025"
-    },
-    {
-        title: "note title 4",
-        content: "content 4 is here",
-        data: "20-09-2025"
-    },
-    {
-        title: "note title 5",
-        content: "content 5 is here",
-        data: "20-09-2025"
-    },
-    {
-        title: "note title 6",
-        content: "content 6 is here",
-        data: "20-09-2025"
-    },  
-];
+const notes = [];
 
 function formattingDate() {
 

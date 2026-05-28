@@ -35,7 +35,7 @@
 }
 
 .note-card {
-    min-width: 300px;
+    width: 300px;
     background-color: rgb(223, 223, 255);
     border-radius: 4px;
     cursor: pointer;  

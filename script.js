@@ -117,6 +117,9 @@ saveBtn.addEventListener("click", function addNote() {
 
     container.style.display = "flex"
     writingSection.style.display = "none"
+
+    title = ""
+    content = ""
 })
 
 function cancelReading() {
